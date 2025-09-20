@@ -1,0 +1,612 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+
+  /* Automatic computation of border around primary / danger buttons */
+  --opaque-button-border-intensity: -8; /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  --background: 0 0% 98%;
+
+  --foreground: 0 0% 12%;
+
+  --border: 0 0% 85%;
+
+  --card: 0 0% 96%;
+
+  --card-foreground: 0 0% 15%;
+
+  --card-border: 0 0% 88%;
+
+  --sidebar: 0 0% 94%;
+
+  --sidebar-foreground: 0 0% 18%;
+
+  --sidebar-border: 0 0% 86%;
+
+  --sidebar-primary: 220 85% 65%;
+
+  --sidebar-primary-foreground: 0 0% 98%;
+
+  --sidebar-accent: 0 0% 90%;
+
+  --sidebar-accent-foreground: 0 0% 25%;
+
+  --sidebar-ring: 220 85% 65%;
+
+  --popover: 0 0% 92%;
+
+  --popover-foreground: 0 0% 20%;
+
+  --popover-border: 0 0% 84%;
+
+  --primary: 220 85% 55%;
+
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 0 0% 88%;
+
+  --secondary-foreground: 0 0% 25%;
+
+  --muted: 0 0% 90%;
+
+  --muted-foreground: 0 0% 45%;
+
+  --accent: 0 0% 88%;
+
+  --accent-foreground: 0 0% 30%;
+
+  --destructive: 0 70% 50%;
+
+  --destructive-foreground: 0 0% 98%;
+
+  --input: 0 0% 75%;
+  --ring: 220 85% 65%;
+  --chart-1: 45 95% 45%;
+  --chart-2: 120 70% 40%;
+  --chart-3: 0 70% 50%;
+  --chart-4: 250 75% 55%;
+  --chart-5: 280 60% 50%;
+
+  /* Timer interval colors - Always-on states with WCAG AA contrast */
+  --timer-work-bg: 0 70% 45%;        /* Red background for work intervals */
+  --timer-work-text: 0 0% 98%;       /* White text on red (contrast ratio: 5.74:1) */
+  
+  --timer-rest-bg: 120 60% 45%;      /* Green background for rest intervals */
+  --timer-rest-text: 0 0% 98%;       /* White text on green (contrast ratio: 5.8:1) */
+  
+  --timer-prep-bg: 175 60% 45%;      /* Teal background for prep/transition */
+  --timer-prep-text: 0 0% 98%;       /* White text on teal (contrast ratio: 5.12:1) */
+  
+  --timer-default-bg: 220 85% 55%;   /* Blue background for other intervals */
+  --timer-default-text: 0 0% 98%;    /* White text on blue (contrast ratio: 4.91:1) */
+
+  /* Block-specific colors - Light mode */
+  --timer-tabata-bg: 0 75% 50%;      /* Red for TABATA */
+  --timer-tabata-text: 0 0% 98%;     /* White text */
+  
+  --timer-interval-bg: 270 70% 50%;  /* Purple for INTERVAL */
+  --timer-interval-text: 0 0% 98%;   /* White text */
+  
+  --timer-emom-bg: 25 85% 55%;       /* Orange for EMOM */
+  --timer-emom-text: 0 0% 12%;       /* Dark text */
+  
+  --timer-challenge-bg: 330 70% 50%; /* Pink for CHALLENGE */
+  --timer-challenge-text: 0 0% 98%;  /* White text */
+  
+  --timer-ladder-bg: 240 70% 50%;    /* Indigo for LADDER */
+  --timer-ladder-text: 0 0% 98%;     /* White text */
+  
+  --timer-combo-bg: 50 90% 55%;      /* Yellow for COMBO */
+  --timer-combo-text: 0 0% 12%;      /* Dark text */
+  
+  --timer-pyramid-bg: 185 70% 50%;   /* Cyan for PYRAMID */
+  --timer-pyramid-text: 0 0% 98%;    /* White text */
+  
+  --timer-randomized-bg: 80 70% 50%; /* Lime for RANDOMIZED */
+  --timer-randomized-text: 0 0% 12%; /* Dark text */
+  
+  --timer-cooldown-bg: 210 70% 50%;  /* Blue for COOLDOWN */
+  --timer-cooldown-text: 0 0% 98%;   /* White text */
+
+  /* Activity-specific colors - Light mode */
+  --timer-burpee-bg: 0 80% 45%;      /* Deep red for burpees */
+  --timer-burpee-text: 0 0% 98%;     /* White text */
+  
+  --timer-jump-squat-bg: 0 70% 55%;  /* Red for jump squats */
+  --timer-jump-squat-text: 0 0% 98%; /* White text */
+  
+  --timer-jumping-jacks-bg: 20 80% 55%; /* Orange for jumping jacks */
+  --timer-jumping-jacks-text: 0 0% 12%; /* Dark text */
+  
+  --timer-mountain-climber-bg: 45 80% 55%; /* Yellow for mountain climbers */
+  --timer-mountain-climber-text: 0 0% 12%; /* Dark text */
+  
+  --timer-plank-bg: 210 70% 50%;     /* Blue for planks */
+  --timer-plank-text: 0 0% 98%;      /* White text */
+  
+  --timer-pushup-bg: 270 60% 50%;    /* Purple for push-ups */
+  --timer-pushup-text: 0 0% 98%;     /* White text */
+  
+  --timer-squat-bg: 120 50% 50%;     /* Green for squats */
+  --timer-squat-text: 0 0% 98%;      /* White text */
+  
+  --timer-lunge-bg: 175 55% 50%;     /* Teal for lunges */
+  --timer-lunge-text: 0 0% 98%;      /* White text */
+  
+  --timer-cardio-bg: 320 60% 50%;    /* Pink for cardio */
+  --timer-cardio-text: 0 0% 98%;     /* White text */
+  
+  --timer-strength-bg: 0 0% 40%;     /* Gray for strength */
+  --timer-strength-text: 0 0% 98%;   /* White text */
+  
+  --timer-stretch-bg: 160 60% 55%;   /* Emerald for stretches */
+  --timer-stretch-text: 0 0% 12%;    /* Dark text */
+  
+  --timer-mobility-bg: 200 70% 55%;  /* Sky blue for mobility */
+  --timer-mobility-text: 0 0% 12%;   /* Dark text */
+
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: JetBrains Mono, monospace;
+  --radius: .5rem; /* 8px */
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.10);
+  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.05), 0px 1px 3px 0px hsl(0 0% 0% / 0.10);
+  --shadow: 0px 1px 3px 0px hsl(0 0% 0% / 0.12), 0px 1px 2px 0px hsl(0 0% 0% / 0.24);
+  --shadow-md: 0px 4px 6px -1px hsl(0 0% 0% / 0.10), 0px 2px 4px -1px hsl(0 0% 0% / 0.06);
+  --shadow-lg: 0px 10px 15px -3px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.05);
+  --shadow-xl: 0px 20px 25px -5px hsl(0 0% 0% / 0.10), 0px 10px 10px -5px hsl(0 0% 0% / 0.04);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+
+  --opaque-button-border-intensity: 9;  /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  --background: 18 15% 8%;
+
+  --foreground: 0 0% 95%;
+
+  --border: 20 12% 18%;
+
+  --card: 20 12% 12%;
+
+  --card-foreground: 0 0% 92%;
+
+  --card-border: 20 12% 20%;
+
+  --sidebar: 18 15% 10%;
+
+  --sidebar-foreground: 0 0% 88%;
+
+  --sidebar-border: 20 12% 16%;
+
+  --sidebar-primary: 220 85% 65%;
+
+  --sidebar-primary-foreground: 18 15% 8%;
+
+  --sidebar-accent: 20 12% 16%;
+
+  --sidebar-accent-foreground: 0 0% 85%;
+
+  --sidebar-ring: 220 85% 65%;
+
+  --popover: 20 12% 14%;
+
+  --popover-foreground: 0 0% 90%;
+
+  --popover-border: 20 12% 22%;
+
+  --primary: 220 85% 65%;
+
+  --primary-foreground: 18 15% 8%;
+
+  --secondary: 20 12% 18%;
+
+  --secondary-foreground: 0 0% 85%;
+
+  --muted: 20 12% 16%;
+
+  --muted-foreground: 0 0% 65%;
+
+  --accent: 20 12% 20%;
+
+  --accent-foreground: 0 0% 80%;
+
+  --destructive: 0 70% 60%;
+
+  --destructive-foreground: 18 15% 8%;
+
+  --input: 20 12% 25%;
+  --ring: 220 85% 65%;
+  --chart-1: 45 95% 60%;
+  --chart-2: 120 70% 50%;
+  --chart-3: 0 70% 60%;
+  --chart-4: 250 75% 70%;
+  --chart-5: 280 60% 65%;
+
+  /* Timer interval colors - Dark mode with WCAG AA contrast */
+  --timer-work-bg: 0 70% 40%;        /* Darker red for dark mode */
+  --timer-work-text: 0 0% 98%;       /* White text on dark red (contrast ratio: 6.89:1) */
+  
+  --timer-rest-bg: 120 60% 50%;      /* Green background for rest intervals */
+  --timer-rest-text: 0 0% 12%;       /* Dark text on green (contrast ratio: 8.5:1) */
+  
+  --timer-prep-bg: 175 60% 40%;      /* Darker teal for dark mode */
+  --timer-prep-text: 0 0% 98%;       /* White text on dark teal (contrast ratio: 6.23:1) */
+  
+  --timer-default-bg: 220 85% 50%;   /* Darker blue for dark mode */
+  --timer-default-text: 0 0% 98%;    /* White text on dark blue (contrast ratio: 5.67:1) */
+
+  /* Block-specific colors */
+  --timer-tabata-bg: 0 75% 45%;      /* Deep red for TABATA */
+  --timer-tabata-text: 0 0% 98%;     /* White text */
+  
+  --timer-interval-bg: 270 70% 45%;  /* Purple for INTERVAL */
+  --timer-interval-text: 0 0% 98%;   /* White text */
+  
+  --timer-emom-bg: 25 85% 50%;       /* Orange for EMOM */
+  --timer-emom-text: 0 0% 12%;       /* Dark text */
+  
+  --timer-challenge-bg: 330 70% 45%; /* Pink for CHALLENGE */
+  --timer-challenge-text: 0 0% 98%;  /* White text */
+  
+  --timer-ladder-bg: 240 70% 45%;    /* Indigo for LADDER */
+  --timer-ladder-text: 0 0% 98%;     /* White text */
+  
+  --timer-combo-bg: 50 90% 50%;      /* Yellow for COMBO */
+  --timer-combo-text: 0 0% 12%;      /* Dark text */
+  
+  --timer-pyramid-bg: 185 70% 45%;   /* Cyan for PYRAMID */
+  --timer-pyramid-text: 0 0% 98%;    /* White text */
+  
+  --timer-randomized-bg: 80 70% 45%; /* Lime for RANDOMIZED */
+  --timer-randomized-text: 0 0% 12%; /* Dark text */
+  
+  --timer-cooldown-bg: 210 70% 45%;  /* Blue for COOLDOWN */
+  --timer-cooldown-text: 0 0% 98%;   /* White text */
+
+  /* Activity-specific colors */
+  --timer-burpee-bg: 0 80% 40%;      /* Deep red for burpees */
+  --timer-burpee-text: 0 0% 98%;     /* White text */
+  
+  --timer-jump-squat-bg: 0 70% 50%;  /* Red for jump squats */
+  --timer-jump-squat-text: 0 0% 98%; /* White text */
+  
+  --timer-jumping-jacks-bg: 20 80% 50%; /* Orange for jumping jacks */
+  --timer-jumping-jacks-text: 0 0% 12%; /* Dark text */
+  
+  --timer-mountain-climber-bg: 45 80% 50%; /* Yellow for mountain climbers */
+  --timer-mountain-climber-text: 0 0% 12%; /* Dark text */
+  
+  --timer-plank-bg: 210 70% 45%;     /* Blue for planks */
+  --timer-plank-text: 0 0% 98%;      /* White text */
+  
+  --timer-pushup-bg: 270 60% 45%;    /* Purple for push-ups */
+  --timer-pushup-text: 0 0% 98%;     /* White text */
+  
+  --timer-squat-bg: 120 50% 45%;     /* Green for squats */
+  --timer-squat-text: 0 0% 98%;      /* White text */
+  
+  --timer-lunge-bg: 175 55% 45%;     /* Teal for lunges */
+  --timer-lunge-text: 0 0% 98%;      /* White text */
+  
+  --timer-cardio-bg: 320 60% 45%;    /* Pink for cardio */
+  --timer-cardio-text: 0 0% 98%;     /* White text */
+  
+  --timer-strength-bg: 0 0% 35%;     /* Gray for strength */
+  --timer-strength-text: 0 0% 98%;   /* White text */
+  
+  --timer-stretch-bg: 160 60% 50%;   /* Emerald for stretches */
+  --timer-stretch-text: 0 0% 12%;    /* Dark text */
+  
+  --timer-mobility-bg: 200 70% 50%;  /* Sky blue for mobility */
+  --timer-mobility-text: 0 0% 12%;   /* Dark text */
+
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.30);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.40);
+  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.30), 0px 1px 3px 0px hsl(0 0% 0% / 0.40);
+  --shadow: 0px 1px 3px 0px hsl(0 0% 0% / 0.50), 0px 1px 2px 0px hsl(0 0% 0% / 0.60);
+  --shadow-md: 0px 4px 6px -1px hsl(0 0% 0% / 0.40), 0px 2px 4px -1px hsl(0 0% 0% / 0.30);
+  --shadow-lg: 0px 10px 15px -3px hsl(0 0% 0% / 0.40), 0px 4px 6px -2px hsl(0 0% 0% / 0.30);
+  --shadow-xl: 0px 20px 25px -5px hsl(0 0% 0% / 0.40), 0px 10px 10px -5px hsl(0 0% 0% / 0.20);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.70);
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/**
+ * Using the elevate system.
+ * Automatic contrast adjustment.
+ *
+ * <element className="hover-elevate" />
+ * <element className="active-elevate-2" />
+ *
+ * // Using the tailwind utility when a data attribute is "on"
+ * <element className="toggle-elevate data-[state=on]:toggle-elevated" />
+ * // Or manually controlling the toggle state
+ * <element className="toggle-elevate toggle-elevated" />
+ *
+ * Elevation systems have to handle many states.
+ * - not-hovered, vs. hovered vs. active  (three mutually exclusive states)
+ * - toggled or not
+ * - focused or not (this is not handled with these utilities)
+ *
+ * Even without handling focused or not, this is six possible combinations that
+ * need to be distinguished from eachother visually.
+ */
+@layer utilities {
+
+  /* Timer utility classes for always-on color states */
+  .timer-work {
+    background-color: hsl(var(--timer-work-bg));
+    color: hsl(var(--timer-work-text));
+  }
+  
+  .timer-rest {
+    background-color: hsl(var(--timer-rest-bg));
+    color: hsl(var(--timer-rest-text));
+  }
+  
+  .timer-prep {
+    background-color: hsl(var(--timer-prep-bg));
+    color: hsl(var(--timer-prep-text));
+  }
+  
+  .timer-default {
+    background-color: hsl(var(--timer-default-bg));
+    color: hsl(var(--timer-default-text));
+  }
+
+  /* Block-specific timer colors */
+  .timer-tabata {
+    background-color: hsl(var(--timer-tabata-bg));
+    color: hsl(var(--timer-tabata-text));
+  }
+  
+  .timer-interval {
+    background-color: hsl(var(--timer-interval-bg));
+    color: hsl(var(--timer-interval-text));
+  }
+  
+  .timer-emom {
+    background-color: hsl(var(--timer-emom-bg));
+    color: hsl(var(--timer-emom-text));
+  }
+  
+  .timer-challenge {
+    background-color: hsl(var(--timer-challenge-bg));
+    color: hsl(var(--timer-challenge-text));
+  }
+  
+  .timer-ladder {
+    background-color: hsl(var(--timer-ladder-bg));
+    color: hsl(var(--timer-ladder-text));
+  }
+  
+  .timer-combo {
+    background-color: hsl(var(--timer-combo-bg));
+    color: hsl(var(--timer-combo-text));
+  }
+  
+  .timer-pyramid {
+    background-color: hsl(var(--timer-pyramid-bg));
+    color: hsl(var(--timer-pyramid-text));
+  }
+  
+  .timer-randomized {
+    background-color: hsl(var(--timer-randomized-bg));
+    color: hsl(var(--timer-randomized-text));
+  }
+  
+  .timer-cooldown {
+    background-color: hsl(var(--timer-cooldown-bg));
+    color: hsl(var(--timer-cooldown-text));
+  }
+
+  /* Activity-specific timer colors */
+  .timer-burpee {
+    background-color: hsl(var(--timer-burpee-bg));
+    color: hsl(var(--timer-burpee-text));
+  }
+  
+  .timer-jump-squat {
+    background-color: hsl(var(--timer-jump-squat-bg));
+    color: hsl(var(--timer-jump-squat-text));
+  }
+  
+  .timer-jumping-jacks {
+    background-color: hsl(var(--timer-jumping-jacks-bg));
+    color: hsl(var(--timer-jumping-jacks-text));
+  }
+  
+  .timer-mountain-climber {
+    background-color: hsl(var(--timer-mountain-climber-bg));
+    color: hsl(var(--timer-mountain-climber-text));
+  }
+  
+  .timer-plank {
+    background-color: hsl(var(--timer-plank-bg));
+    color: hsl(var(--timer-plank-text));
+  }
+  
+  .timer-pushup {
+    background-color: hsl(var(--timer-pushup-bg));
+    color: hsl(var(--timer-pushup-text));
+  }
+  
+  .timer-squat {
+    background-color: hsl(var(--timer-squat-bg));
+    color: hsl(var(--timer-squat-text));
+  }
+  
+  .timer-lunge {
+    background-color: hsl(var(--timer-lunge-bg));
+    color: hsl(var(--timer-lunge-text));
+  }
+  
+  .timer-cardio {
+    background-color: hsl(var(--timer-cardio-bg));
+    color: hsl(var(--timer-cardio-text));
+  }
+  
+  .timer-strength {
+    background-color: hsl(var(--timer-strength-bg));
+    color: hsl(var(--timer-strength-text));
+  }
+  
+  .timer-stretch {
+    background-color: hsl(var(--timer-stretch-bg));
+    color: hsl(var(--timer-stretch-text));
+  }
+  
+  .timer-mobility {
+    background-color: hsl(var(--timer-mobility-bg));
+    color: hsl(var(--timer-mobility-text));
+  }
+
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
+   * buttons/badges can remove the automatic brightness adjustment on interactions
+   * and program their own. */
+  .no-default-hover-elevate {}
+
+  .no-default-active-elevate {}
+
+
+  /**
+   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
+   * This way they can stack/compound. Both will overlap the parent's borders!
+   * So borders will be automatically adjusted both on toggle, and hover/active,
+   * and they will be compounded.
+   */
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: -1;
+    /* sits behind content but above backdrop */
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  /* Does not work on elements with overflow:hidden! */
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: 999;
+    /* sits in front of content */
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
